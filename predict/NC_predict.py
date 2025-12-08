@@ -12,7 +12,7 @@ x_test = clean_data_test.iloc[:, :-1].to_numpy()
 y_test = clean_data_test.iloc[:, -1].to_numpy()
 
 # 加载模型
-model = load_model('model/NC_predict.h5')
+model = load_model('model/model_NC.h5')
 
 # 使用模型预测测试集
 y_pred = model.predict(x_test)
@@ -53,3 +53,4 @@ print("Specificity (SP):", sp)
 print("MCC:", C)
 
 print("F1-SCORE:", f_measure)
+
