@@ -41,9 +41,9 @@ scaler_NC = StandardScaler()
 scaler_NT = StandardScaler()
 
 # 读取训练数据并拟合StandardScaler
-train_data_BBB = pd.read_csv("BBB_7.csv", header=None)
-train_data_NC = pd.read_csv("NC_7.csv", header=None)
-train_data_NT = pd.read_csv("NT_7.csv", header=None)
+train_data_BBB = pd.read_csv("data/BBB_7.csv", header=None)
+train_data_NC = pd.read_csv("data/NC_7.csv", header=None)
+train_data_NT = pd.read_csv("data/NT_7.csv", header=None)
 
 scaler_BBB.fit(train_data_BBB)
 scaler_NC.fit(train_data_NC)
@@ -68,9 +68,9 @@ def predictinhibitionmultimodels(smiles):
         input_NT = np.concatenate([maccs, descriptors_NT[0]])
 
         # 加载模型并进行预测
-        model_BBB = k.models.load_model("model_7_BBB.h5")
-        model_NC = k.models.load_model("model_7_NC.h5")
-        model_NT = k.models.load_model("model_7_NT.h5")
+        model_BBB = k.models.load_model("model/model_BBB.h5")
+        model_NC = k.models.load_model("model/model_NC.h5")
+        model_NT = k.models.load_model("model/model_NT.h5")
 
         result_BBB = model_BBB.predict(np.array([input_BBB]))
         result_NC = model_NC.predict(np.array([input_NC]))
@@ -96,4 +96,5 @@ for i, result in enumerate(results):
         print(f"{model_name}: {inhibition_status} (Probability: {probability:.2f})")
     else:
         print(f"{model_name}: Prediction failed due to invalid input")
+
 
