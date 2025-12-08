@@ -12,56 +12,56 @@ We developed a multilayer fully connected deep neural network model, designated 
   <em>Figure 1: Schematic overview of the NeuroTDPi framework</em>
 </div>
 
-## 📁 **Project Structure**
-NeuroTDPi/
-├── data/ # Datasets for BBB,NC,NT endpoints
-├── model/ # Pretrained models (BBB, NC, NT)
-├── predict/ # Prediction scripts
-├── train/ # Training scripts
-├── NeuroTDPi.py # Main prediction pipeline
-├── TOC.png # Graphical abstract
-└── environment.yml # Conda environment configuration
 
 
-## 🔨 **1. Installation**
 
-### **Using Conda (Recommended)**
+## 🔨 **1. Installation (Conda)**
 
+1. Clone the repository：
 ```bash
-# Clone the repository
-git clone https://github.com/CZyang6688/NeuroTDPi.git
-
-# Navigate to the project directory
-cd NeuroTDPi
-
-# Create and activate conda environment
-conda create -n neuron python=3.10
-conda activate neuron
-
-# Install dependencies
-conda env create -f environment.yml
-
+   git clone https://github.com/CZyang6688/NeuroTDPi.git
+```
+2. Navigate to the project directory：
+```bash
+   cd NeuroTDPi
+```
+3. Create and activate conda environment：
+```bash
+    conda create -n neuron python=3.10
+    conda activate neuron
+```
+4. Install dependencies:
+```bash
+    conda env create -f environment.yml
+```
 
 ## 🔨 **2. Single Endpoint Results Reproduction**
 
-**• For BBB endpoints**
+• For BBB endpoints:
 ```bash
-python predict/BBB_predict.py
+  python predict/BBB_predict.py
+```
 
-**• For NC endpoints**
+• For NC endpoints:
 ```bash
-python predict/NC_predict.py
+  python predict/NC_predict.py
+```
 
-**• For NT endpoints**
+• For NT endpoints：
 ```bash
-python predict/NT_predict.py
+  python predict/NT_predict.py
+```
 
 ## 🔨 **3. Predicting Single Compound Toxicity for BBB, NC, and NT using NeuroTDPi**
-• Step 1: Modify NeuroTDPi.py file：Line 85:，Modify the SMILES string
-  smiles = "SMILES of the compound to predict"  # Replace with your compound SMILES
-• Step 2: Run the model
-  ```bash
-  python NeuroTDPi.py
 
+• Step 1: Modify NeuroTDPi.py file：Line 85:，Modify the SMILES string
+```bash
+  smiles = "SMILES of the compound to predict"  # Replace with your compound SMILES
+```
+
+• Step 2: Run the model
+```bash
+  python NeuroTDPi.py
+```
 
 
