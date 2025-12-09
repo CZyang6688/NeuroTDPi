@@ -39,17 +39,17 @@ We developed a multilayer fully connected deep neural network model, designated 
 
 • For BBB endpoints:
 ```bash
-  python predict/BBB_predict.py
+  python BBB_predict.py
 ```
 
 • For NC endpoints:
 ```bash
-  python predict/NC_predict.py
+  python NC_predict.py
 ```
 
 • For NT endpoints：
 ```bash
-  python predict/NT_predict.py
+  python NT_predict.py
 ```
 
 ## 🔨 **3. Predicting Single Compound Toxicity for BBB, NC, and NT using NeuroTDPi**
